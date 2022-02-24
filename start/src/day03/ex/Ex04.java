@@ -17,18 +17,25 @@ public class Ex04 {
 		
 		// 1년 = 365.2426일
 		double year = 365.2426;
+
+		// 1년의 일 환산값
+		double day = year / 1;
 		
-		double temp = year;
+		// 365일을 제외한 0.2426일의 초 환산값 = 20960초
+		double time = 0.2426 * 60 * 60 * 24;
 		
-		double day = temp / 1;
+		// 1년의 시간 결과
+		double hour = time / (60 * 60);
 		
-		temp = day % temp;
+		// 1년의 분 결과
+		double minute = time / 60 % 60;
 		
-		double time = temp / 24;
+		// 1년의 초 결과
+		double second = time % 60;
 		
-		System.out.println(day);
-		System.out.println(time);
-		
-		System.out.println(temp);
+		// 출력
+		System.out.println("1년은 365.2426일 이다.");
+		System.out.println((int)day + "일 " + (int)hour + "시간 " + (int)minute + "분 " + (int)second + "초 입니다.");
+
 	}
 }
