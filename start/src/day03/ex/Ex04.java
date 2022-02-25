@@ -18,11 +18,14 @@ public class Ex04 {
 		// 1년 = 365.2426일
 		double year = 365.2426;
 
+		// 365일을 제외한 나머지 소숫자리
+		double temp = 365.2426 % 365;
+		
 		// 1년의 일 환산값
 		double day = year / 1;
 		
 		// 365일을 제외한 0.2426일의 초 환산값 = 20960초
-		double time = 0.2426 * 60 * 60 * 24;
+		double time = temp * 60 * 60 * 24;
 		
 		// 1년의 시간 결과
 		double hour = time / (60 * 60);
