@@ -31,7 +31,5 @@ public class Ex01_01 {
 		
 		// 출력
 		System.out.println("가장 큰 수 : " + big + " 입니다.\n" + "중간 수 : " + mid + " 입니다.\n" + "가장 작은 수 : " + small + "입니다.");
-		
-		
 	}
 }

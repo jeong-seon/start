@@ -24,26 +24,8 @@ public class Ex05 {
 		// 100으로 나눈 나머지 수
 		int nam = num % 100;
 		
-		// 100의 배수 만들기
-		int result = 
-						(num % 100) == 0 ? (num) :
-						(num > 950) ? (num + (100 - nam)) :
-						(num > 900) ? (num - nam) :
-						(num > 850) ? (num + (100 - nam)) :
-						(num > 800) ? (num - nam) :
-						(num > 750) ? (num + (100 - nam)) :
-						(num > 700) ? (num - nam) :
-						(num > 650) ? (num + (100 - nam)) :
-						(num > 600) ? (num - nam) :
-						(num > 550) ? (num + (100 - nam)) :
-						(num > 500) ? (num - nam) :
-						(num > 450) ? (num + (100 - nam)) :
-						(num > 400) ? (num - nam) :
-						(num > 350) ? (num + (100 - nam)) :
-						(num > 300) ? (num - nam) :
-						(num > 250) ? (num + (100 - nam)) :
-						(num > 200) ? (num - nam) :
-						(num > 150) ? (num + (100 - nam)) : (num);
+		// 100의 배수 만들기						
+		int result = (nam == 0) ? (num) : (nam > 50) ? (num + (100 - nam)) : (num - nam);
 		
 		// 데이터 출력
 		System.out.println("=================== 계 산 중 ===================");
