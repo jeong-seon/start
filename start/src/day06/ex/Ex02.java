@@ -12,8 +12,24 @@ package day06.ex;
 public class Ex02 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		double a = 0.54 * 60;
+		double b = 1.08 * 60;
+		System.out.println(a);
+		System.out.println(b);
+		double mount = 7564;
+		
+		for (double i = 0; i < mount; i++) {
+			for (double j = a; j >= a; j++) {
 
+			}
+
+			for (double k = b; k >= k; k++) {
+				
+			}
+			if (a == b) {
+				System.out.println(i);
+			}
+		}	
 	}
 
 }
