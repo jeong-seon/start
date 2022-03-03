@@ -17,20 +17,36 @@ package day05.ex;
  */
 public class Ex15 {
 	public static void main(String[] args) {
-		// 곱할 수
-		for (int i = 1 ; i <= 9 ; i++) {
-		// x단
-			for (int j = 2 ; j <= 5 ; j++) {
-				System.out.print(j + " x " + i + " = " + (j * i) + "\t");
+		for (int i = 0 ; i < 2 ; i++) {
+			
+			for (int j = 0 ; j < 9 ; j++) {
+				
+				for (int k = 1 ; k < 5 ; k++) {
+					int dan = i * 4 + k + 1;
+					int gop = j + 1;
+					
+					// 출력
+					System.out.print(dan + " x " + gop + " = " + (dan * gop) + "\t");
+				}
+				System.out.println();
 			}
 			System.out.println();
 		}
-		System.out.println();
-		for (int i = 1 ; i <= 9 ; i++) {
-			for (int j = 6 ; j <= 9 ; j++) {
-				System.out.print(j + " x " + i + " = " + (j * i) + "\t");
-			}
-			System.out.println();
-		}
+		
+//		// 곱할 수
+//		for (int i = 1 ; i <= 9 ; i++) {
+//		// x단
+//			for (int j = 2 ; j <= 5 ; j++) {
+//				System.out.print(j + " x " + i + " = " + (j * i) + "\t");
+//			}
+//			System.out.println();
+//		}
+//		System.out.println();
+//		for (int i = 1 ; i <= 9 ; i++) {
+//			for (int j = 6 ; j <= 9 ; j++) {
+//				System.out.print(j + " x " + i + " = " + (j * i) + "\t");
+//			}
+//			System.out.println();
+//		}
 	}
 }

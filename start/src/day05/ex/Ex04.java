@@ -33,7 +33,7 @@ public class Ex04 {
 		Scanner sc = new Scanner(System.in);
 		
 		// 입력
-		System.out.print("코드 입력: ");
+		System.out.print("* 사용용도 코드를 입력하세요!\n\t가정용\t1\n\t산업용\t2\n\t교육용\t3\n\t상업용\t4\n입력코드 : ");
 		String input1 = sc.nextLine();
 		System.out.print("사용량 입력: ");
 		int input2 = sc.nextInt();
@@ -55,5 +55,6 @@ public class Ex04 {
 		
 		// 결과 출력
 		System.out.println("전기요금 = " + result + " 원 입니다.");
+		
 	}
 }

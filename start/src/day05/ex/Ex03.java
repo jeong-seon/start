@@ -28,6 +28,5 @@ public class Ex03 {
 		for (int i = 0 ; i < len ; i++) {
 			System.out.println((i + 1) + " 번째 데이터 : " + str.charAt(i));
 		}
-		
 	}
 }

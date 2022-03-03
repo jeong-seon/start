@@ -13,9 +13,9 @@ public class Ex11 {
 	public static void main(String[] args) {
 		// x 의 경우
 		for (int i = 0 ; i <= 10 ; i++) {
-		// y 의 경우
+			// y 의 경우
 			for (int j = 0 ; j <= 10 ; j++) {
-		// 2x + 4y 가 10이 되는 경우의 x값과 y값 결과
+				// 2x + 4y 가 10이 되는 경우의 x값과 y값 결과
 				if ((2 * i) + (4 * j) == 10) {
 					System.out.println("x = [" + i + "], y = [" + j + "]");
 				}
