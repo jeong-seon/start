@@ -10,8 +10,48 @@ package day12.sub;
 	각 도형의 내용을 출력하세요.
 */
 public class Ex01 {
-
+	Figure[] f;
 	public Ex01() {
+		setFig();
+		figPrint();
+	}
+	// fig 배열 출력함수
+	public void figPrint() {
+		for(Figure fig : f) {
+			fig.toPrint();
+		}
+	}
+	
+	
+	// fig 배열 초기화
+	public void setFig() {
+		f = new Figure[10];
+		for(int i = 0; i < f.length; i++) {
+			// 랜덤 0 ~ 2 정수 뽑기
+			int no = getRand();
+			
+			// 0 ~ 2 일때 데이터
+			switch(no) {
+			case 0:
+				// Semo : 삼각형
+				f[i] = new Semo((int)(Math.random() * 21 + 5), (int)(Math.random() * 21 + 5));
+				break;
+			case 1:
+				// Nemo : 사각형
+				f[i] = new Nemo((int)(Math.random() * 21 + 5), (int)(Math.random() * 21 + 5));
+				break;
+			case 2:
+				// Won : 원
+				f[i] = new Won((int)(Math.random() * 21 + 5));
+				break;
+			}
+			
+		}
+	}
+	
+	// 랜덤 0 ~ 2 정수 뽑기
+	public int getRand() {
+		return (int)(Math.random() * 3);
 		
 	}
 	public static void main(String[] args) {

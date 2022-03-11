@@ -6,7 +6,7 @@ import javax.swing.*;
 
 public class MyWin {
 	JFrame fr;
-	JButton btn1, btn2;
+	JButton btn1, btn2, btn3;
 	JPanel mainP, bPan;
 	
 	public MyWin() {
@@ -18,10 +18,11 @@ public class MyWin {
 		mainP.setBackground(Color.GREEN);
 		
 		bPan = new JPanel();
-		bPan.setLayout(new GridLayout(1, 2));
+		bPan.setLayout(new GridLayout(1, 3));
 		
 		btn1 = new JButton("닫기");
-		btn2 = new JButton("변경");
+		btn2 = new JButton("추가");
+		btn3 = new JButton("변경");
 		
 
 		
@@ -39,14 +40,28 @@ public class MyWin {
 		};
 		*/
 		
-		ActionListener exit = new MyExit();
-		ActionListener act = new MyEvt();
+		ActionListener exit = new MyExit();		// 전역 내부 클래스로 처리
+		
+//		ActionListener act = new MyEvt();
+		
+		// 내 위치의 주소를 알려주기 위해 this 를 써야함.
+		ActionListener act1 = new MyEvt(this);
+		// 일반적인 외부에 클래스를 만들어서 처리하는 방법
 		
 		// 닫기 버튼 기능
 		btn1.addActionListener(exit);
 		
+		// 추가 버튼 기능
+		btn2.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				new MyWin();
+			}
+		});
+		
 		// 변경 버튼 기능
-		btn2.addActionListener(act);
+		btn3.addActionListener(act1);
 		
 //		btn2.addActionListener(new ActionListener() {
 //			@Override
@@ -57,6 +72,7 @@ public class MyWin {
 		
 		bPan.add(btn1);
 		bPan.add(btn2);
+		bPan.add(btn3);
 		
 		fr.add(mainP, BorderLayout.CENTER);
 		fr.add(bPan, BorderLayout.SOUTH);
@@ -80,19 +96,19 @@ public class MyWin {
 		}
 	}
 
-	// 변경 버튼 기능 추가
-	class MyEvt implements ActionListener {
-		// 전역 내부 클래스...
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			int red = (int)(Math.random() * 256);
-			int green = (int)(Math.random() * 256);
-			int blue = (int)(Math.random() * 256);
-			
-			Color c = new Color(red, green, blue);
-			
-			mainP.setBackground(c);
-		}
-	}
+//	// 변경 버튼 기능 추가
+//	class MyEvt implements ActionListener {
+//		// 전역 내부 클래스...
+//		@Override
+//		public void actionPerformed(ActionEvent e) {
+//			int red = (int)(Math.random() * 256);
+//			int green = (int)(Math.random() * 256);
+//			int blue = (int)(Math.random() * 256);
+//			
+//			Color c = new Color(red, green, blue);
+//			
+//			mainP.setBackground(c);
+//		}
+//	}
 	
 }
