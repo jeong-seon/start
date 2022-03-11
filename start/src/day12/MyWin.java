@@ -39,18 +39,21 @@ public class MyWin {
 		};
 		*/
 		
+		ActionListener exit = new MyExit();
 		ActionListener act = new MyEvt();
 		
-		// 닫기 이벤트 추가
-		btn1.addActionListener(act);
-//		btn2.addActionListener(act);
+		// 닫기 버튼 기능
+		btn1.addActionListener(exit);
 		
-		btn2.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				mainP.setBackground(Color.blue);
-			}
-		});
+		// 변경 버튼 기능
+		btn2.addActionListener(act);
+		
+//		btn2.addActionListener(new ActionListener() {
+//			@Override
+//			public void actionPerformed(ActionEvent e) {
+//				mainP.setBackground(Color.blue);
+//			}
+//		});
 		
 		bPan.add(btn1);
 		bPan.add(btn2);
@@ -67,12 +70,28 @@ public class MyWin {
 	public static void main(String[] args) {
 		new MyWin();
 	}
-
-	class MyEvt implements ActionListener {
+	
+	// 닫기 버튼 기능 추가
+	class MyExit implements ActionListener {
 		// 전역 내부 클래스...
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			System.exit(0);
+		}
+	}
+
+	// 변경 버튼 기능 추가
+	class MyEvt implements ActionListener {
+		// 전역 내부 클래스...
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			int red = (int)(Math.random() * 256);
+			int green = (int)(Math.random() * 256);
+			int blue = (int)(Math.random() * 256);
+			
+			Color c = new Color(red, green, blue);
+			
+			mainP.setBackground(c);
 		}
 	}
 	
