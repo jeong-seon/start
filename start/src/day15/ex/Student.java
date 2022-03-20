@@ -100,6 +100,6 @@ public class Student implements Comparable {
 	@Override
 	public String toString() {
 		
-		return "학생 : " + name + "\t반 : " + ban + "\t번호 : " + num + "\tJAVA : " + java + "\tDB : " + db + "\t\tWEB : " + web + "\tSPRING : " + spr + "\t총점 : " + total + "\t평균 : " + avg; 
+		return "학생 : " + name + "\t반 : " + ban + "\t\t번호 : " + num + "\tJAVA : " + java + "\tDB : " + db + "\t\tWEB : " + web + "\tSPRING : " + spr + "\t총점 : " + total + "\t평균 : " + avg; 
 	}
 }
