@@ -14,7 +14,7 @@ public class Test15 {
  */
 	public Test15() {
 		TreeSet set = new TreeSet();
-//		int count = 1;
+		
 		
 		while(true) {
 			Semo s = new Semo((int)(Math.random() * 31 + 5), (int)(Math.random() * 31 + 5));
