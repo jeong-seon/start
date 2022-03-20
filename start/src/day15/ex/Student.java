@@ -73,7 +73,7 @@ public class Student implements Comparable {
 	}
 
 	public int getTotal() {
-		return total;
+		return java + db + web + spr;
 	}
 
 	public void setTotal(int total) {
@@ -81,7 +81,7 @@ public class Student implements Comparable {
 	}
 
 	public double getAvg() {
-		return avg;
+		return total / 4.;
 	}
 
 	public void setAvg(double avg) {
@@ -93,6 +93,10 @@ public class Student implements Comparable {
 		Student s = (Student) o;
 		
 		int result = ban - s.getBan();
+		
+		if (ban == s.getBan()) {
+			result = num - s.getNum();
+		}
 		
 		return result;
 	}

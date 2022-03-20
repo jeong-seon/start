@@ -23,37 +23,28 @@ public class Ex03 {
 		setData();
 		Student[] stud = new Student[10];
 		stud = getStudent();
-		TreeSet set = new TreeSet();
+		
 		int count = 1;
+		
+		TreeSet set = new TreeSet();
+		
 		for (int i = 0; i < stud.length; i++) {
-			
 			set.add(stud[i]);
 			
-			count++;
 			
 			if (set.size() == 10) {
 				break;
 			}
+			count++;
 		}
-//		while (true) {
-//			int i = 0;
-//			set.add(stud1[i]);
-//			
-//			i++;
-//			
-//			if (set.size() == 10) {
-//				break;
-//			}
-//			
-//		}
 		
 		ArrayList list = new ArrayList(set);
 		for (Object o : list) {
 			System.out.println(o);
 		}
-		
-		System.out.println();
-		System.out.println(count);
+//		System.out.println();
+		System.out.println("Count : " + count);
+	
 	}
 	public Student[] getStudent() {
 		Student[] stud = new Student[10];
@@ -82,7 +73,7 @@ public class Ex03 {
 		name = new String[] {"제니", "리사", "로제", "지수", "둘리", "재석", "석진", "광수", "하하", "종국"};
 		ban = new int[10];
 		for (int i = 0; i < ban.length; i++) {
-			int van = (int)(Math.random() * 20 + 1);
+			int van = (int)(Math.random() * 9 + 1);
 			ban[i] = van;
 		}
 		num = new int[10];
