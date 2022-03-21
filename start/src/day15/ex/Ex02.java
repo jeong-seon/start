@@ -7,7 +7,13 @@ package day15.ex;
  */
 import java.util.*;
 
+import day15.Circle;
+
 public class Ex02 {
+/*
+	이 경우는 기존 가지고 있는 정렬기준을 바꾸는 작업이 되기때문에
+	Comparator 를 트리셋을 만들 때 적용시켜서 만들면 된다.
+ */
 
 	public Ex02() {
 		TreeSet set = new TreeSet();
@@ -22,16 +28,22 @@ public class Ex02 {
 				return -result;
 			}
 		});
-		for(int i = 0; i < 10; i++) {
+		while (true) {
 			int no = (int)(Math.random() * 99 + 1);
 			set.add(no);
 			set1.add(no);
 			
+			if (set.size() == 10) {
+				break;
+			}
+			if (set1.size() == 10) {
+				break;
+			}
+			
 		}
-//		for(int i = 0; i < 10; i++) {
-//			set1.add((int)(Math.random() * 99 + 1));
-//			
-//		}
+		for (Object o : set) {
+			System.out.println(o);
+		}
 		
 		System.out.println("========== 내림차순 정렬 전 ===========");
 		System.out.println(set);

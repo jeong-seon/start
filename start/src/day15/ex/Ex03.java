@@ -77,9 +77,17 @@ public class Ex03 {
 			ban[i] = van;
 		}
 		num = new int[10];
+		loop:
 		for (int i = 0; i < num.length; i++) {
 			int number = (int)(Math.random() * 30 + 1);
 			num[i] = number;
+			for (int j = 0; j < i; j++) {
+				if (num[i] == num[j]) {
+					num[j] = number;
+					continue loop;
+				}
+			}
+			
 		}
 		java = new int[10];
 		for (int i = 0; i < java.length; i++) {
