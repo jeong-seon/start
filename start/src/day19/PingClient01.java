@@ -37,7 +37,7 @@ public class PingClient01 {
 			out = socket.getOutputStream();
 			
 			// 스트림이 준비되었으니 데이터를 서버에 전달해보자.
-			String msg = "첫번째 네트워크 프로그램 핑(정선우)";
+			String msg = "Hi ) 메세지를 보냅니다!";
 			// 바이트 배열로 변환
 			byte[] buff = msg.getBytes();
 			// 서버에 보낸다.
