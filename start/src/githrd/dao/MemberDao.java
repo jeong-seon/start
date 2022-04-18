@@ -136,7 +136,7 @@ public class MemberDao {
 	// 아이디를 입력해서 해당 회원의 전화번호를 수정(010-1212-1212) 해주는 함수
 	public int updateTel(MemberVO mvo) {
 		int cnt = 0;
-//		MemberVO mvo = new MemberVO();
+		
 		con = db.getCon();
 		
 		String sql = mSQL.getSQL(mSQL.UP_IDTEL);
@@ -144,9 +144,50 @@ public class MemberDao {
 		pstmt = db.getPstmt(con, sql);
 		
 		try {
+			String tel = mvo.getTel();
 			String id = mvo.getId();
+			pstmt.setString(1, mvo.getTel());
+			pstmt.setString(2, mvo.getId());
 			
-			pstmt.setString(1, id);
+			cnt = pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			db.close(pstmt);
+			db.close(con);
+		}
+		
+		return cnt;
+	}
+	
+	// [bonus]
+	// Scanner 로 회원정보를 입력받아서 회원가입을 처리해주는 함수
+	public int insertJoin(MemberVO mvo) {
+		int cnt = 0;
+		
+		con = db.getCon();
+		
+		String sql = mSQL.getSQL(mSQL.INSERT_JOIN);
+		
+		pstmt = db.getPstmt(con, sql);
+		
+		try {
+			String name = mvo.getName();
+			String id = mvo.getId();
+			String pw = mvo.getPw();
+			String mail = mvo.getMail();
+			String tel = mvo.getTel();
+			int avt = mvo.getAvt();
+			String gen = mvo.getGen();
+			
+			pstmt.setString(1, mvo.getName());
+			pstmt.setString(2, mvo.getId());
+			pstmt.setString(3, mvo.getPw());
+			pstmt.setString(4, mvo.getMail());
+			pstmt.setString(5, mvo.getTel());
+			pstmt.setInt(6, mvo.getAvt());
+			pstmt.setString(7, mvo.getGen());
+			
 			
 			cnt = pstmt.executeUpdate();
 			

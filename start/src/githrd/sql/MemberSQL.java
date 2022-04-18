@@ -1,10 +1,12 @@
 package githrd.sql;
 
 public class MemberSQL {
-	public final int SEL_MNOID	= 1001;
-	public final int SEL_NO1001	= 1002;
-	public final int SEL_ALLID	= 1003;
-	public final int UP_IDTEL	= 1004;
+	public final int SEL_MNOID		= 1001;
+	public final int SEL_NO1001		= 1002;
+	public final int SEL_ALLID		= 1003;
+	public final int UP_IDTEL		= 1004;
+	public final int INSERT_JOIN	= 1005;
+	
 	public String getSQL(int code) {
 		StringBuffer buff = new StringBuffer();
 		
@@ -33,9 +35,16 @@ public class MemberSQL {
 			buff.append("UPDATE ");
 			buff.append("    member ");
 			buff.append("SET ");
-			buff.append("    tel = '010-1212-1212' ");
+			buff.append("    tel = ? ");
 			buff.append("WHERE ");
 			buff.append("    id = ? ");
+			break;
+		case INSERT_JOIN:
+			buff.append("INSERT INTO ");
+			buff.append("	member(mno, name, id, pw, mail, tel, avt, gen) ");
+			buff.append("VALUES( ");
+			buff.append("		NVL(mno + 1, 1001), ?, ?, ?, ?, ?, ?, ? ");
+			buff.append(") ");
 			break;
 		}
 		

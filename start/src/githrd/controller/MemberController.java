@@ -12,7 +12,7 @@ public class MemberController {
 		Scanner sc = new Scanner(System.in);
 		
 		while(true) {
-			System.out.print("회원번호와 아이디 조회 : mnoid\n회원번호 1001번 조회 : no1001\n전화번호 수정 : uptel\n프로그램 종료 : exit\n명령 입력 : ");
+			System.out.print("회원번호와 아이디 조회 : mnoid\n회원번호 1001번 조회 : no1001\n전화번호 수정 : uptel\n회원가입 : join\n프로그램 종료 : exit\n명령 입력 : ");
 			String str = sc.nextLine();
 			System.out.println();
 			
@@ -27,8 +27,12 @@ public class MemberController {
 				break;
 			// 아이디를 입력해서 해당 회원의 전화번호를 수정(010-1212-1212) 해주는 함수
 			case "uptel":
-//				view.idPrint();
-				view.UpdateTel(sc);
+				view.UpdateTel(sc, sc);
+				break;
+			// [bonus]
+			// Scanner 로 회원정보를 입력받아서 회원가입을 처리해주는 함수
+			case "join":
+				view.Join(sc, sc, sc, sc, sc, sc, sc);
 				break;
 			case "exit":
 				sc.close();
@@ -38,13 +42,8 @@ public class MemberController {
 				System.out.println("# 잘못 입력 하셨습니다.\n");
 			}
 		}
-	}
-
+	}	
 	
-	
-	
-	// [bonus]
-	// Scanner 로 회원정보를 입력받아서 회원가입을 처리해주는 함수
 	
 	public static void main(String[] args) {
 		new MemberController();
