@@ -6,6 +6,8 @@ public class MemberSQL {
 	public final int SEL_ALLID		= 1003;
 	public final int UP_IDTEL		= 1004;
 	public final int INSERT_JOIN	= 1005;
+	public final int SEL_ALLMNO		= 1006;
+	public final int SEL_MNO		= 1007;
 	
 	public String getSQL(int code) {
 		StringBuffer buff = new StringBuffer();
@@ -41,10 +43,24 @@ public class MemberSQL {
 			break;
 		case INSERT_JOIN:
 			buff.append("INSERT INTO ");
-			buff.append("	member(mno, name, id, pw, mail, tel, avt, gen) ");
+			buff.append("	member(mno, name, id, pw, mail, tel, gen, avt) ");
 			buff.append("VALUES( ");
-			buff.append("		NVL(mno + 1, 1001), ?, ?, ?, ?, ?, ?, ? ");
+			buff.append("		membseq.NEXTVAL, ?, ?, ?, ?, ?, ?, ? ");
 			buff.append(") ");
+			break;
+		case SEL_ALLMNO:
+			buff.append("SELECT ");
+			buff.append("	mno ");
+			buff.append("FROM ");
+			buff.append("	member ");
+			break;
+		case SEL_MNO:
+			buff.append("SELECT ");
+			buff.append("    mno, name, id, pw, mail, tel, avt, gen, joindate ");
+			buff.append("FROM ");
+			buff.append("    member ");
+			buff.append("WHERE ");
+			buff.append("    mno = ? ");
 			break;
 		}
 		
